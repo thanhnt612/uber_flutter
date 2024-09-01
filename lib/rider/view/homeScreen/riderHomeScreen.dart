@@ -180,7 +180,9 @@ class _RiderHomeScreenState extends State<RiderHomeScreen> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(8.sp),
                                     color: greyShadeButton),
-                                child: Image(image: AssetImage(e[0])),
+                                child: Image(
+                                  image: AssetImage(e[0]),
+                                ),
                               ),
                               Text(
                                 e[1],
