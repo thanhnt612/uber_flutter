@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:uber/constant/commonWidgets/elevatedButton.dart';
 import 'package:uber/constant/utils/colors.dart';
 import 'package:uber/constant/utils/textStyles.dart';
 
@@ -45,11 +44,6 @@ class _RiderHomeScreenState extends State<RiderHomeScreen> {
       'assets/images/planNextTrip/rentals.png',
       'Rentals',
       'Travel from 1 to 12 hours'
-    ],
-    [
-      'assets/images/planNextTrip/flights.png',
-      'Flights',
-      'Book your flights to anywhere in the world'
     ]
   ];
   List saveEveryDay = [
@@ -214,86 +208,114 @@ class _RiderHomeScreenState extends State<RiderHomeScreen> {
               SizedBox(
                 height: 4.h,
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'More ways to use Uber',
-                    style: AppTextStyles.body14Bold,
-                  ),
-                  SizedBox(
-                    height: 1.h,
-                  ),
-                  SizedBox(
-                    height: 20.h,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      shrinkWrap: true,
-                      itemCount: moreWaysToUber.length,
-                      itemBuilder: (context, index) {
-                        return Container(
-                          margin: EdgeInsets.only(
-                              left: index == 0 ? 0 : 1.5.w,
-                              right: index == (moreWaysToUber.length - 1)
-                                  ? 0
-                                  : 1.5.w),
-                          height: 20.h,
-                          width: 65.w,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                height: 15.h,
-                                width: 65.w,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8.sp),
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      moreWaysToUber[index][0],
-                                    ),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              ),
-                              Expanded(
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      moreWaysToUber[index][1],
-                                      style: AppTextStyles.small12Bold,
-                                    ),
-                                    SizedBox(
-                                      width: 3.w,
-                                    ),
-                                    Icon(
-                                      Icons.arrow_forward,
-                                      size: 2.h,
-                                      color: black87,
-                                    )
-                                  ],
-                                ),
-                              ),
-                              SizedBox(
-                                height: 0.2.h,
-                              ),
-                              Text(
-                                moreWaysToUber[index][2],
-                                style: AppTextStyles.small10
-                                    .copyWith(color: black87),
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                    ),
-                  )
-                ],
-              )
+              ExploreFeaturesHorizontalListView(
+                  title: 'More ways to use Uber', list: moreWaysToUber),
+              SizedBox(
+                height: 4.h,
+              ),
+              ExploreFeaturesHorizontalListView(
+                  title: 'Plan your next Trip', list: planYourNextTrip),
+              SizedBox(
+                height: 4.h,
+              ),
+              ExploreFeaturesHorizontalListView(
+                  title: 'Save Every day', list: saveEveryDay),
+              SizedBox(
+                height: 2.h,
+              ),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class ExploreFeaturesHorizontalListView extends StatelessWidget {
+  const ExploreFeaturesHorizontalListView({
+    super.key,
+    required this.list,
+    required this.title,
+  });
+
+  final List list;
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: AppTextStyles.body14Bold,
+        ),
+        SizedBox(
+          height: 1.h,
+        ),
+        SizedBox(
+          height: 20.h,
+          child: ListView.builder(
+            physics: const BouncingScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            shrinkWrap: true,
+            itemCount: list.length,
+            itemBuilder: (context, index) {
+              return Container(
+                margin: EdgeInsets.only(
+                    left: index == 0 ? 0 : 1.5.w,
+                    right: index == (list.length - 1) ? 0 : 1.5.w),
+                height: 20.h,
+                width: 65.w,
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: 15.h,
+                      width: 65.w,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8.sp),
+                        image: DecorationImage(
+                          image: AssetImage(
+                            list[index][0],
+                          ),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Row(
+                        children: [
+                          Text(
+                            list[index][1],
+                            style: AppTextStyles.small12Bold,
+                          ),
+                          SizedBox(
+                            width: 3.w,
+                          ),
+                          Icon(
+                            Icons.arrow_forward,
+                            size: 2.h,
+                            color: black87,
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 0.2.h,
+                    ),
+                    Text(
+                      list[index][2],
+                      style: AppTextStyles.small10.copyWith(color: black87),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        )
+      ],
     );
   }
 }

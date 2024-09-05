@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:uber/constant/utils/colors.dart';
 import 'package:uber/rider/view/homeScreen/riderHomeScreen.dart';
 import 'package:sizer/sizer.dart';
+import 'package:uber/rider/view/serviceScreen/serviceScreen.dart';
 
 void main() {
   runApp(const Uber());
@@ -23,7 +24,7 @@ class _UberState extends State<Uber> {
           debugShowCheckedModeBanner: false,
           theme:
               ThemeData(appBarTheme: AppBarTheme(color: white, elevation: 0)),
-          home: const RiderHomeScreen(),
+          home: const ServiceScreenRider(),
         );
       },
     );
