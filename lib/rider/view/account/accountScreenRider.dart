@@ -4,14 +4,14 @@ import 'package:sizer/sizer.dart';
 import 'package:uber/constant/utils/colors.dart';
 import 'package:uber/constant/utils/textStyles.dart';
 
-class accountScreenRider extends StatefulWidget {
-  const accountScreenRider({super.key});
+class Accountscreenrider extends StatefulWidget {
+  const Accountscreenrider({super.key});
 
   @override
-  State<accountScreenRider> createState() => _accountScreenRiderState();
+  State<Accountscreenrider> createState() => _AccountscreenriderState();
 }
 
-class _accountScreenRiderState extends State<accountScreenRider> {
+class _AccountscreenriderState extends State<Accountscreenrider> {
   List accountTopButtons = [
     [CupertinoIcons.shield_fill, 'Help'],
     [CupertinoIcons.creditcard_fill, 'Payment'],
@@ -63,6 +63,8 @@ class _accountScreenRiderState extends State<accountScreenRider> {
             physics: const NeverScrollableScrollPhysics(),
             padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 1.h),
             children: [
+
+
               //Profile Data
               Row(
                 children: [
@@ -91,6 +93,8 @@ class _accountScreenRiderState extends State<accountScreenRider> {
                 ],
               ),
               SizedBox(height: 3.h),
+
+
               //Top Row Button
               Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

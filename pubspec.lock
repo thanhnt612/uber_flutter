@@ -469,14 +469,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.3"
-  go_router:
-    dependency: transitive
-    description:
-      name: go_router
-      sha256: "2ddb88e9ad56ae15ee144ed10e33886777eb5ca2509a914850a5faa7b52ff459"
-      url: "https://pub.dev"
-    source: hosted
-    version: "14.2.7"
   google_maps:
     dependency: transitive
     description:
@@ -693,14 +685,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.0"
-  logging:
-    dependency: transitive
-    description:
-      name: logging
-      sha256: "623a88c9594aa774443aa3eb2d41807a48486b5613e67599fb4c41c0ad47c340"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.2.0"
   matcher:
     dependency: transitive
     description:
@@ -817,10 +801,10 @@ packages:
     dependency: "direct main"
     description:
       name: persistent_bottom_nav_bar_v2
-      sha256: f5cc01ed36d6f93ecb3b8b64eaaa5b41618c6ac75c54e8beb1d3486cfc6d8547
+      sha256: "2fbaf1e8b18108d8a303304a306d68bcfb78abfd553295f489a8a315dff479e2"
       url: "https://pub.dev"
     source: hosted
-    version: "5.3.0"
+    version: "4.2.8"
   petitparser:
     dependency: transitive
     description:
