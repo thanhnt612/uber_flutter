@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:uber/common/view/authScreens/loginScreen.dart';
 import 'package:uber/constant/utils/colors.dart';
 import 'package:uber/rider/controller/bottomNavBarRiderProvider/bottomNavBarRiderProvider.dart';
 import 'package:uber/rider/view/account/accountScreenRider.dart';
@@ -35,7 +36,7 @@ class _UberState extends State<Uber> {
             debugShowCheckedModeBanner: false,
             theme:
                 ThemeData(appBarTheme: AppBarTheme(color: white, elevation: 0)),
-            home: const BottomNavBarRider(),
+            home: const LoginScreen(),
           ),
         );
       },

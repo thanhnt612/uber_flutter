@@ -22,6 +22,8 @@ class _BottomNavBarRiderState extends State<BottomNavBarRider> {
     const RiderHomeScreen(),
     const ServiceScreenRider(),
     const ActivityscreenRider(),
+    const Accountscreenrider(),
+    const Accountscreenrider()
   ];
 
   List<PersistentBottomNavBarItem> _navBarItems(int currentTab) {
@@ -49,14 +51,22 @@ class _BottomNavBarRiderState extends State<BottomNavBarRider> {
         activeColorPrimary: black,
         inactiveColorPrimary: grey,
       ),
-      // PersistentBottomNavBarItem(
-      //   icon: Icon(currentTab == 0
-      //       ? CupertinoIcons.person_fill
-      //       : CupertinoIcons.person),
-      //   title: 'Account',
-      //   activeColorPrimary: black,
-      //   inactiveColorPrimary: grey,
-      // ),
+      PersistentBottomNavBarItem(
+        icon: Icon(currentTab == 0
+            ? CupertinoIcons.person_fill
+            : CupertinoIcons.person),
+        title: 'Account',
+        activeColorPrimary: black,
+        inactiveColorPrimary: grey,
+      ),
+      PersistentBottomNavBarItem(
+        icon: Icon(currentTab == 0
+            ? CupertinoIcons.person_fill
+            : CupertinoIcons.person),
+        title: 'Account',
+        activeColorPrimary: black,
+        inactiveColorPrimary: grey,
+      ),
     ];
   }
 
